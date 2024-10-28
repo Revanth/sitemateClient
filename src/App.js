@@ -2,21 +2,24 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const apiCall = async(apiName) => {
+    try{
+      const res = await fetch('http://localhost:3001/sitemate/api/'+apiName)
+      console.log('Response:', res)
+    }
+    catch(e){
+      console.log('Api '+ apiName +' error: ' + e)
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={() => apiCall('create')}>Create</button>
+        <button onClick={() => apiCall('read')}>Read</button>
+        <button onClick={() => apiCall('update')}>Update</button>
+        <button onClick={() => apiCall('delete')}>Delete</button>
       </header>
     </div>
   );
