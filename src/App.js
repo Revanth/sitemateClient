@@ -4,6 +4,7 @@ import './App.css';
 function App() {
 
   const apiCall = async(apiName) => {
+    const jiraIssue = {'ID': 'Bug001', 'Title': 'Sample Title', 'Description': 'Sample description'}
     try{
       const res = await fetch('http://localhost:3001/sitemate/api/'+apiName)
       console.log('Response:', res)
