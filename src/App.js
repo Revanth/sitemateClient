@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const jiraIssue = { 'ID': 'Bug001', 'Title': 'Sample Title', 'Description': 'Sample description' }
+  const jiraIssue = { 'ID': 'Bug002', 'Title': 'Sample Title 1', 'Description': 'Sample description 1' }
 
   const apiCallCreate = async () => {
     try {
